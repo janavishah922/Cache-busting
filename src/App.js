@@ -18,6 +18,7 @@ class App extends Component {
                 <h1>Cache Busting</h1>
                 <p>
                   Bundle version - <code>v{global.appVersion}</code>
+                  hi
                 </p>
               </header>
             </div>
