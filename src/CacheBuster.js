@@ -28,6 +28,7 @@ class CacheBuster extends React.Component {
       isLatestVersion: false,
       refreshCacheAndReload: () => {
         console.log('Clearing cache and hard reloading...')
+        
         if (caches) {
           // Service worker cache should be cleared with caches.delete()
           caches.keys().then(async function(names) {
@@ -49,7 +50,6 @@ class CacheBuster extends React.Component {
         const currentVersion = global.appVersion;
         console.log(latestVersion, currentVersion)
         const shouldForceRefresh = semverGreaterThan(latestVersion, currentVersion);
-        console.log(shouldForceRefresh)
         if (shouldForceRefresh) {
           console.log(`We have a new version - ${latestVersion}. Should force refresh`);
           this.setState({ loading: false, isLatestVersion: false });
@@ -60,6 +60,7 @@ class CacheBuster extends React.Component {
       });
   }
   render() {
+    console.log(caches)
     const { loading, isLatestVersion, refreshCacheAndReload } = this.state;
     return this.props.children({ loading, isLatestVersion, refreshCacheAndReload });
   }
