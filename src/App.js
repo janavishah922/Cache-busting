@@ -19,7 +19,6 @@ class App extends Component {
                 <p>
                   Bundle version - <code>v{global.appVersion}</code>
                 </p>
-                <p>Have a look!</p>
               </header>
             </div>
           );

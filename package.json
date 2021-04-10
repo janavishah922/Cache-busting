@@ -1,12 +1,8 @@
 {
   "name": "cache-busting-example",
   "version": "0.1.5",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:flexdinesh/cache-busting-example.git"
-  },
   "license": "MIT",
-  "author": "Dineshkumar Pandiyan <flexdinesh@gmail.com>",
+  "author": "Janavi Shah",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

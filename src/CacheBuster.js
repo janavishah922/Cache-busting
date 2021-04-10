@@ -1,17 +1,17 @@
 import React from 'react';
 import packageJson from '../package.json';
 global.appVersion = packageJson.version;
-console.log(global.appVersion)
-console.log(packageJson.version)
 // version from response - first param, local version second param
 const semverGreaterThan = (versionA, versionB) => {
+ 
   const versionsA = versionA.split(/\./g);
-
+  
   const versionsB = versionB.split(/\./g);
   while (versionsA.length || versionsB.length) {
     const a = Number(versionsA.shift());
-
+   
     const b = Number(versionsB.shift());
+    
     // eslint-disable-next-line no-continue
     if (a === b) continue;
     // eslint-disable-next-line no-restricted-globals
@@ -26,17 +26,15 @@ class CacheBuster extends React.Component {
     this.state = {
       loading: true,
       isLatestVersion: false,
-      refreshCacheAndReload: () => {
+      
+      refreshCacheAndReload: async() => {
         console.log('Clearing cache and hard reloading...')
         
         if (caches) {
-          // Service worker cache should be cleared with caches.delete()
           caches.keys().then(async function(names) {
             await Promise.all(names.map(name => caches.delete(name)));
             });
         }
-
-        // delete browser cache and hard reload
         window.location.reload();
       }
     };
@@ -48,7 +46,8 @@ class CacheBuster extends React.Component {
       .then((meta) => {
         const latestVersion = meta.version;
         const currentVersion = global.appVersion;
-        console.log(latestVersion, currentVersion)
+        console.log("metaVersion", latestVersion)
+        console.log("currentVersion", currentVersion)
         const shouldForceRefresh = semverGreaterThan(latestVersion, currentVersion);
         if (shouldForceRefresh) {
           console.log(`We have a new version - ${latestVersion}. Should force refresh`);
