@@ -1,6 +1,6 @@
 {
   "name": "cache-busting-example",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Janavi Shah",
   "dependencies": {
     "react": "^16.8.6",
