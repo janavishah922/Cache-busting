@@ -15,11 +15,24 @@ class App extends Component {
           return (
             <div className="App">
               <header className="App-header" >
-                <h1>Cache Busting</h1>
+                <h1>Cache Busting Project</h1>
                 <p>
                   Bundle version - <code>v{global.appVersion}</code>
-                  hi
                 </p>
+                <img
+                        alt="logo"
+                        src="/assets/img/OssApi.jpg"
+                        width="75"
+                        height="75"
+                        // className="responsive border-0 border-radius img-fluid mb-3"
+                      />
+                       <img
+                        alt="header"
+                        src="/assets/img/header.jpg"
+                        width="75"
+                        height="75"
+                        // className="responsive border-0 border-radius img-fluid mb-3"
+                      />
               </header>
             </div>
           );
