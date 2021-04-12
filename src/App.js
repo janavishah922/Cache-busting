@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import CacheBuster from './CacheBuster';
-import './App.css';
+import React, { Component } from "react";
+import CacheBuster from "./CacheBuster";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -19,6 +19,8 @@ class App extends Component {
                 <p>
                   Bundle version - <code>v{global.appVersion}</code>
                 </p>
+                <img src="/assets/img/1.jpg" width="150" height="150" alt="i1" />
+                <img src="assets/img/2.jpg" alt="i1" width="150" height="150" />
               </header>
             </div>
           );
